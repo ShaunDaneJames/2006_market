@@ -12,9 +12,11 @@ class Vendor
   end
 
   def stock(item, quantity)
-    stock_item = Hash.new[item => quantity]
-    @inventory.update(stock_item)
-    require "pry"; binding.pry
-
+    if @inventory.keys.include?(item)
+      @inventory[item] += quantity
+    else
+      @inventory.store(item, quantity)
+    end
   end
+
 end

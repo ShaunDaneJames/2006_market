@@ -12,7 +12,9 @@ class Vendor
   end
 
   def stock(item, quantity)
+    stock_item = Hash.new[item => quantity]
+    @inventory.update(stock_item)
     require "pry"; binding.pry
-    @inventory['item'] = quantity
+
   end
 end

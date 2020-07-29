@@ -13,6 +13,6 @@ class Vendor
 
   def stock(item, quantity)
     require "pry"; binding.pry
-    @inventory.update(@inventory) {|item, quantity| quantity += quantity}
+    @inventory['item'] = quantity
   end
 end

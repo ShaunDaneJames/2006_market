@@ -8,6 +8,10 @@ class Vendor
   end
 
   def check_stock(item)
-    0
+    @inventory.fetch("item", 0)
+  end
+
+  def stock(item, quantity)
+    @inventory.store("item", quantity)
   end
 end
